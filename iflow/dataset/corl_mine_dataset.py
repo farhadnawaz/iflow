@@ -26,16 +26,10 @@ class CoRL():
         self.n_dims = trajs_np.shape[2]
 
         ## Normalize Trajectories
-        # trajs_np = np.reshape(trajs_np, (self.n_trajs * self.n_steps, self.n_dims))
-        # self.mean = np.mean(trajs_np, axis=0)
-        # self.std = np.std(trajs_np, axis=0)
-        # self.trajs_normalized = self.normalize(self.trajs_real)
-
-        ## (No) Normalize Trajectories
         trajs_np = np.reshape(trajs_np, (self.n_trajs * self.n_steps, self.n_dims))
         self.mean = np.mean(trajs_np, axis=0)
         self.std = np.std(trajs_np, axis=0)
-        self.trajs_normalized = np.array(self.trajs_real)
+        self.trajs_normalized = self.normalize(self.trajs_real)
 
         ## Build Train Dataset
         self.train_data = []
