@@ -34,8 +34,8 @@ class CoRL():
 
         ## Build Train Dataset
         self.train_data = []
-        for i in range(self.trajs_normalized.shape[0]):
-            self.train_data.append(self.trajs_normalized[i, ...])
+        for i in range(self.train_trajs.shape[0]):
+            self.train_data.append(self.train_trajs[i, ...])
         ### Mean Angular velocity ###
         self.w = self.get_mean_ang_vel()
 
