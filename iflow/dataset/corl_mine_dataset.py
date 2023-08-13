@@ -15,8 +15,8 @@ class CoRL():
         self.filename = filename
         data = np.load(directory + filename + '.npy')
         self.dim = 6
-        # self.dt = 0.0016 # Towel
-        self.dt = 0.0033 # Wiping loop
+        self.dt = 0.0016 # Towel
+        # self.dt = 0.0033 # Wiping loop
         self.trajs_real = []
         for i in range(data.shape[0]):
             self.trajs_real.append(data[i, :, :])
